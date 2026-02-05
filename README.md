@@ -6,17 +6,23 @@ This repository provides a minimal, end‑to‑end, explainable phishing email d
 - Model: TF‑IDF features + Logistic Regression
 - Explainability: token‑level contributions computed from linear model weights (coef × TF‑IDF value) for a given input text
 
-The solution is intentionally lightweight and dependency‑friendly, avoiding heavy frameworks. It includes a single Python script with CLI flags for training, evaluation, prediction, and explanations.
 
 ## File overview
-- explainable_phishing_email_detection.py — main script (train/evaluate/predict/explain)
-- datasets/phishing-email-dataset/phishing_email.csv — dataset used for training/evaluation
-- models/ — folder created automatically to store the trained pipeline (joblib)
+- `ml/logistic.py` — main script (train/evaluate/predict/explain)
+- `datasets/phishing-email-dataset/phishing_email.csv` — dataset used for training/evaluation
+- `models/` — folder created automatically to store the trained pipeline (joblib)
 
 ## Setup
 
 1) Python version
 - Python 3.9+ recommended (3.8+ should also work)
+
+2) Download dataset from [here](https://www.kaggle.com/datasets/naserabdullahalam/phishing-email-dataset/data?select=phishing_email.csv)
+
+```
+- Create folder datasets/phishing-email-dataset/
+- Extract phishing_email.csv from the downloaded zip file and paste it into the datasets/phishing-email-dataset/ folder.
+```
 
 2) Create and activate a virtual environment (recommended)
 ```
@@ -30,5 +36,9 @@ source .venv/bin/activate
 3) Install dependencies
 ```
 pip install -U pip
-pip install scikit-learn pandas numpy joblib
+pip install -r requirements.txt
+```
+4) Run Project
+```
+python ml/logistic.py
 ```
