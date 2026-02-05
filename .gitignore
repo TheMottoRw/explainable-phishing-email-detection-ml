@@ -90,11 +90,6 @@ env/
 .dmypy.json
 compiled/
 
-# model artifacts and data caches
-models/
-*.joblib
-*.pkl
-
 # OS files
 .DS_Store
 Thumbs.db
