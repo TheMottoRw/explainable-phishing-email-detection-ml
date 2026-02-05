@@ -32,7 +32,6 @@ MANIFEST
 *.manifest
 *.spec
 *.zip
-*.csv
 
 
 # Installer logs
